@@ -1,5 +1,7 @@
-package springmongo;
+package hb.controllers;
 
+import hb.models.Movie;
+import hb.models.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +12,14 @@ import java.util.List;
 
 
 /**
- *
+ * Only controller that we need, listening to requests on the
+ * context-path's root "/".
+ * <p>
+ * The {@link RequestMapping} annotations on the methods, will indicate
+ * which urls any method will respond to.
+ * The {@link ResponseBody} annotations will indicate that the return
+ * values of the methods should be bound
+ * to the web response body
  */
 @Controller
 public class MovieController {

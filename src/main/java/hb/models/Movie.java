@@ -1,11 +1,19 @@
-package springmongo;
+package hb.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 /**
- *
+ * Entity mapping the "movies" collection in the database.
+ * <p>
+ * {@link Document} indicates to spring's component scan that
+ * this class is a database document entity,
+ * and {@link Id} specifies this entity's primary key.
+ * <p>
+ * With MongoDB would be better use the object {@link org.bson.types.ObjectId}
+ * as the type of this object's id but in this case we can use String
+ * wich ObjectId <-> String conversion is pretty natural
  */
 @Document
 public class Movie {
@@ -39,4 +47,5 @@ public class Movie {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 }
